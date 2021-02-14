@@ -1,0 +1,30 @@
+To train yolo 
+1) Download darknet : git clone https://github.com/AlexeyAB/darknet.git
+2) In darknet fold go to makeflile change the value of GPU, CUDNN and OPENCV to 1
+GPU = 1
+CUDNN = 1
+OPENCV = 1
+3) Go to darknet project github download pretrained weight "yolov4.conv.137" place it in darknet fold
+4) Download the weight for testing
+5) copy yolov4.cfg from darknet/cfg to darknet and edit it
+batch =64 (line 2)
+subdivision=12 (line 3)
+width=416 (line 8)
+height=416 (line 9)
+max_batches=2000(line 20)
+steps=1600,1800 (line 22)
+
+==== SEt FILTERS FOR CNN ====
+filter = 18 (line 961)
+classes=1 (line 968)
+
+filter = 18 (line 1049)
+classes=1 (line 1056)
+
+
+filter = 18 (line 1137)
+classes=1 (line 1144)
+
+6) set covid_data fold and subfold image in darknet fold where we will put collected and anooted covid images
+to pouulate the fold search on google coronavirus microscopic real images
+7) Download LabelImg for image labeling "https://tzutalin.github.io/labelImg/ " in yolo4/custom_tools
